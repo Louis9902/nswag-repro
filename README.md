@@ -1,0 +1,1 @@
+﻿# Repro for Bug with multi level inheritance
