@@ -45,6 +45,23 @@
           }
         }
       },
+      "SealedA": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Intermediate"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "fromA": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        ]
+      },
       "Intermediate": {
         "allOf": [
           {
@@ -55,8 +72,8 @@
             "discriminator": {
               "propertyName": "$type",
               "mapping": {
-                "seal-a": "#/components/schemas/SealedA",
-                "seal-b": "#/components/schemas/SealedB"
+                "seal-b": "#/components/schemas/SealedB",
+                "seal-a": "#/components/schemas/SealedA"
               }
             },
             "x-abstract": true,
@@ -70,23 +87,6 @@
               },
               "$type": {
                 "type": "string"
-              }
-            }
-          }
-        ]
-      },
-      "SealedA": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Intermediate"
-          },
-          {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "fromA": {
-                "type": "integer",
-                "format": "int32"
               }
             }
           }

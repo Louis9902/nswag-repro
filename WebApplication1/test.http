@@ -1,0 +1,3 @@
+﻿GET http://localhost:5214
+Accept: application/json
+# {"$type": "seal-a","fromA": 10,"fromIntermediate": "A","fromBase": "A"}

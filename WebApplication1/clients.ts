@@ -76,13 +76,13 @@ export abstract class Base implements IBase {
 
     static fromJS(data: any): Base {
         data = typeof data === 'object' ? data : {};
-        if (data["$type"] === "Intermediate") {
-            throw new Error("The abstract class 'Intermediate' cannot be instantiated.");
-        }
         if (data["$type"] === "SealedA") {
             let result = new SealedA();
             result.init(data);
             return result;
+        }
+        if (data["$type"] === "Intermediate") {
+            throw new Error("The abstract class 'Intermediate' cannot be instantiated.");
         }
         if (data["$type"] === "SealedB") {
             let result = new SealedB();

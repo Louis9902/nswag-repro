@@ -18,7 +18,8 @@ static async Task<Base> HandleAsync()
 
 
 [JsonPolymorphic(UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToNearestAncestor)]
-[JsonDerivedType(typeof(Intermediate), "inter")]
+[JsonDerivedType(typeof(SealedA), "seal-a")]
+[JsonDerivedType(typeof(SealedB), "seal-b")]
 public abstract record Base(string FromBase);
 
 [JsonPolymorphic(UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToNearestAncestor)]
